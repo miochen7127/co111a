@@ -14,4 +14,18 @@ CHIP Xor {
 
     PARTS:
     // Put your code here:
+    Nand(a = a , b = a , out = c);
+    Nand(a = b , b = b , out = e);
+    Nand(a = c , b = b , out = d);
+    Nand(a = a , b = e , out = f);
+    Nand(a = f , a = d , out = out);
+    //Not(in = a, out = nota);
+    //Not(in = b, out = notb);
+    //And(a = nota, b = b, out = nab);
+    //And(a = a, b = notb, out = anb);
+    //Or(a = nab, b = anb, out = out);
+    //Nand( a = a , b = a , out = c);
+    //Nand( a = b , b = b , out = e);
+    //Nand( a = c , b = e , out = f);
+    //Nand( a = f , b = f , out = out);
 }

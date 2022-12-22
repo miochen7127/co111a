@@ -13,8 +13,9 @@ module Or(input a,b, output out);
 endmodule
 
 module Xor(input a,b, output out);
-    Or g1(a,b,aorb);
-    Not g2(aorb,out);
+  Nand g1(a, b, AnandB);
+  Or   g2(a, b, AorB);
+  And  g3(AnandB, AorB, out);
 endmodule
 
 module And(input a,b, output out);

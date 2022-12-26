@@ -42,7 +42,7 @@ module PC(input[15:0] in, input clock, load, inc, reset, output[15:0] out);
   Mux16 g3(c, in, load,  d);
   Mux16 g4(d, 16'b0, reset, e);
 
-  Register g5(e, clock, out, a);
+  Register g5(e, clock,1'b1,out);
 
 endmodule
 
@@ -85,14 +85,14 @@ module RAM512(input[15:0] in, input clock, load, input[8:0] address, output[15:0
   
   DMux8Way g0(load, address[8:6], L0, L1, L2, L3, L4, L5, L6, L7);
   
-  RAM64 g1(in,  clock, L0, address[2:0], o0);
-  RAM64 g2(in,  clock, L1, address[2:0], o1);
-  RAM64 g3(in,  clock, L2, address[2:0], o2);
-  RAM64 g4(in,  clock, L3, address[2:0], o3);
-  RAM64 g5(in,  clock, L4, address[2:0], o4);
-  RAM64 g6(in,  clock, L5, address[2:0], o5);
-  RAM64 g7(in,  clock, L6, address[2:0], o6);
-  RAM64 g8(in,  clock, L7, address[2:0], o7);
+  RAM64 g1(in,  clock, L0, address[5:0], o0);
+  RAM64 g2(in,  clock, L1, address[5:0], o1);
+  RAM64 g3(in,  clock, L2, address[5:0], o2);
+  RAM64 g4(in,  clock, L3, address[5:0], o3);
+  RAM64 g5(in,  clock, L4, address[5:0], o4);
+  RAM64 g6(in,  clock, L5, address[5:0], o5);
+  RAM64 g7(in,  clock, L6, address[5:0], o6);
+  RAM64 g8(in,  clock, L7, address[5:0], o7);
 
   Mux8Way16 g9(o0, o1, o2, o3, o4, o5, o6, o7, address[8:6], out);
 endmodule

@@ -1,4 +1,4 @@
-`include "gate.v"
+`include "../Ch1/gate.v"
 
 module Not16(input[15:0] in, output[15:0] out);
   Not g0(in[0], out[0]);

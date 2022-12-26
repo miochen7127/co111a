@@ -1,4 +1,4 @@
-`include "ALU.v"
+`include "../Ch2/ALU.v"
 
 module DFF (input in, clock, output out);
   reg q;

@@ -1,4 +1,4 @@
-`include "gate16.v"
+`include "../Ch1/gate16.v"
 
 module Mux(input a, b, sel, output out);
   Not g1(sel, notsel);

@@ -1,4 +1,4 @@
-`include "MUX_DMUX.v"
+`include "../Ch1/MUX_DMUX.v"
 
 module HalfAdder(input a, b, output sum,carry);
   Xor g1(a,b,sum);

@@ -1,4 +1,4 @@
-`include "Memory.v"
+`include "../Ch3/Memory.v"
 
 module Memory(input[15:0] in, input clock, load, input[14:0] address, output[15:0] out);
   wire[15:0] ramO, scrO, keyO;

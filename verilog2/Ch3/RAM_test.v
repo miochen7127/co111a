@@ -12,13 +12,26 @@ initial
 begin
   clock=0;
   $monitor("%4dns in=%d clock=%d load=%d address=%d out=%d", $stime, in, clock, load, address, out);
-  #10 in=3; load=1; address=5;
-  #10 load=0; 
-  #10	$finish;
+  in=0; load=0; address=0;
+  load=0; 
+end
+
+always #1 begin
+  clock=~clock;
 end
 
 always #2 begin
-  clock=~clock;
+  load=load + 1;
 end
+
+always #3 begin
+  in = {$random} % 21845;
+end
+
+always #4 begin
+  address = {$random} % 16383;
+end
+
+initial #50 $finish;
 
 endmodule
